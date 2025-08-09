@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>選挙地図</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        /* 全体的なスタイル */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background-color: #ffffff; /* 白い背景 */
+            color: #333333;
+            line-height: 1.8;
+            display: flex;
+            flex-direction: column; /* 要素を縦に並べる */
+            min-height: 100vh;
+        }
+
+        /* ヘッダー */
+        header {
+            display: flex;
+            justify-content: flex-start; /* ロゴを左寄せ */
+            align-items: center;
+            padding: 20px 50px; /* パディングを調整 */
+            border-bottom: none; /* ヘッダーのボーダーを削除 */
+            background-color: #ffffff;
+            box-shadow: none; /* ヘッダーの影を削除 */
+        }
+        .logo {
+            font-size: 2rem; /* ロゴを少し大きく */
+            font-weight: 700;
+            color: #222222;
+            text-decoration: none;
+            letter-spacing: -0.02em; /* 文字間隔を調整 */
+        }
+        /* ヒーローセクション */
+        .hero-section {
+            /* 国会議事堂のフリー画像URLをここに設定してください */
+            /* 例: https://upload.wikimedia.org/wikipedia/commons/1/16/National_Diet_Building_02.jpg */
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/16/National_Diet_Building_02.jpg'); /* 国会議事堂の例 (Wikimedia Commons) */
+            background-size: cover;
+            background-position: center;
+            height: 550px; /* 高さを少し高く */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before { /* 画像を少し暗くするオーバーレイ */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* オーバーレイをさらに濃くしてテキストを見やすく */
+        }
+        .hero-content {
+            z-index: 1; /* オーバーレイより前面に */
+            padding: 20px;
+            max-width: 900px;
+        }
+        .hero-content h1 {
+            font-size: 4.5rem; /* 大きな見出し */
+            font-weight: 700;
+            margin-bottom: 25px; /* 間隔を少し広げる */
+            line-height: 1.1; /* 行の高さを詰める */
+            letter-spacing: -0.06em; /* 文字間隔をさらに詰める */
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5); /* 影を強調 */
+        }
+        .hero-content p {
+            font-size: 1.6rem; /* サブテキストを少し大きく */
+            color: #ffffff;
+            max-width: 700px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+            font-weight: 400; /* フォントウェイトを調整 */
+        }
+
+        /* コンテンツセクション */
+        .content-section {
+            padding: 100px 50px; /* パディングを増やす */
+            text-align: center;
+            background-color: #fcfcfc; /* わずかに異なる背景色 */
+        }
+        .content-section h2 {
+            font-size: 3rem; /* 見出しを大きく */
+            font-weight: 700;
+            color: #222222;
+            margin-bottom: 80px; /* 間隔を広げる */
+            letter-spacing: -0.03em; /* 文字間隔を調整 */
+        }
+        .content-blocks {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* レスポンシブ対応 */
+            gap: 50px; /* ブロック間の間隔を広げる */
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .content-block {
+            flex: 1; /* 均等幅 */
+            min-width: 280px; /* 最小幅 */
+            max-width: 350px; /* 最大幅 */
+            background-color: #ffffff;
+            padding: 50px 30px; /* パディングを増やす */
+            border-radius: 16px; /* 角をさらに丸く */
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1); /* より明確な影 */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            border: 1px solid #e5e5e5; /* 薄いボーダーを調整 */
+        }
+        .content-block:hover {
+            transform: translateY(-15px); /* ホバー時の浮き上がりを強調 */
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2); /* ホバー時の影を強調 */
+        }
+        .content-block .material-icons {
+            font-size: 4rem; /* アイコンサイズをさらに大きく */
+            color: #555555; /* アイコンの色を少し濃く */
+            margin-bottom: 30px; /* 間隔を広げる */
+            display: block; /* アイコンを中央に配置するためにブロック要素にする */
+            text-align: center;
+        }
+        .content-block h3 {
+            font-size: 2rem; /* 見出しを大きく */
+            color: #333333;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .content-block p {
+            font-size: 1.15rem; /* テキストを少し大きく */
+            color: #666666;
+            line-height: 1.7;
+            margin: 0;
+            margin-bottom: 30px; /* リンクとの間隔 */
+        }
+        .content-block a { /* リンクスタイル */
+            display: inline-block;
+            margin-top: 10px; /* 上のテキストとの間隔を調整 */
+            padding: 12px 28px; /* パディングを調整 */
+            background-color: #222222; /* より濃いボタン色 */
+            color: white;
+            border-radius: 10px; /* 角をさらに丸く */
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem; /* ボタンの文字サイズを調整 */
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* ボタンの影 */
+        }
+        .content-block a:hover {
+            background-color: #444444; /* ホバー時のボタン色 */
+            transform: translateY(-3px); /* 軽く浮き上がる */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+
+        /* フッター */
+        footer {
+            padding: 50px 20px; /* パディングを増やす */
+            text-align: center;
+            color: #777777;
+            font-size: 0.95rem;
+            background-color: #f8f8f8; /* フッターの背景色 */
+            border-top: none; /* フッターのボーダーを削除 */
+            margin-top: auto; /* フッターを下に固定 */
+        }
+        .note {
+            color: #888888;
+            font-size: 1rem;
+            margin-top: 60px !important; /* 間隔を調整 */
+        }
+        .note .material-icons {
+            font-size: 1.1rem;
+            color: #888888;
+            vertical-align: middle;
+        }
+
+        /* レスポンシブデザイン */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+            .logo {
+                font-size: 1.5rem;
+            }
+            .hero-section {
+                height: 350px;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            .content-section {
+                padding: 60px 20px;
+            }
+            .content-section h2 {
+                font-size: 2rem;
+                margin-bottom: 50px;
+            }
+            .content-blocks {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+            .content-block {
+                max-width: 100%; /* 小さい画面では全幅に */
+                padding: 30px 20px;
+            }
+            .content-block .material-icons {
+                font-size: 3rem;
+                margin-bottom: 20px;
+            }
+            .content-block h3 {
+                font-size: 1.5rem;
+            }
+            .content-block p {
+                font-size: 1rem;
+            }
+            .content-block a {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+            footer {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">選挙地図</a>
+    </header>
+
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>2025年第27回参議院議員通常選挙</h1>
+            <p>2025年第27回参議院議員通常選挙における比例代表の結果を、直感的でインタラクティブな地図で分かりやすく可視化しました。</p>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>選挙結果の分析を探る</h2>
+        <div class="content-blocks">
+            <div class="content-block">
+                <span class="material-icons">leaderboard</span>
+                <h3>最多得票政党マップ</h3>
+                <p>各自治体で最も得票が多かった政党を視覚的に表示します。地域の政治傾向が一目で分かります。</p>
+                <a href="https://2025san-original.netlify.app/" target="_blank" rel="noopener noreferrer">地図を見る</a>
+            </div>
+            <div class="content-block">
+                <span class="material-icons">trending_up</span>
+                <h3>第2党得票マップ</h3>
+                <p>次に得票が多かった政党に焦点を当て、競争の激しい地域や潜在的な変動を明らかにします。</p>
+                <a href="https://2025san-2nd.netlify.app/" target="_blank" rel="noopener noreferrer">地図を見る</a>
+            </div>
+            <div class="content-block">
+                <span class="material-icons">gavel</span>
+                <h3>野党第1党マップ</h3>
+                <p>野党勢力の動向と、特定の地域での野党支持の強さを詳細に分析します。</p>
+                <a href="https://2025san-opposition.netlify.app/" target="_blank" rel="noopener noreferrer">地図を見る</a>
+            </div>
+            <div class="content-block">
+                <span class="material-icons">how_to_vote</span>
+                <h3>政党別得票マップ</h3>
+                <p>特定の政党の自治体ごとの得票状況を把握できます。</p>
+                <a href="https://2025san-custom2.netlify.app/" target="_blank" rel="noopener noreferrer">地図を見る</a>
+            </div>
+        </div>
+        <p class="note" style="margin-top: 50px;">
+            <span class="material-icons">info</span> これらの地図は新しいブラウザタブで開かれ、常に最新の情報に更新されています。
+        </p>
+    </div>
+
+    <footer>
+        <p>使用画像：<a href="https://commons.wikimedia.org/wiki/File:National_Diet_Building_02.jpg">国会議事堂</a> by <a href="https://commons.wikimedia.org/wiki/User:663highland">663highland</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja">CC BY-SA 4.0</a></p>
+    </footer>
+</body>
+</html>
