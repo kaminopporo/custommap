@@ -11,39 +11,36 @@
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
-            background-color: #ffffff; /* 白い背景 */
+            background-color: #f0f2f5;
             color: #333333;
             line-height: 1.8;
             display: flex;
-            flex-direction: column; /* 要素を縦に並べる */
+            flex-direction: column;
             min-height: 100vh;
         }
 
         /* ヘッダー */
         header {
             display: flex;
-            justify-content: flex-start; /* ロゴを左寄せ */
+            justify-content: flex-start;
             align-items: center;
-            padding: 20px 50px; /* パディングを調整 */
-            border-bottom: none; /* ヘッダーのボーダーを削除 */
+            padding: 20px 50px;
             background-color: #ffffff;
-            box-shadow: none; /* ヘッダーの影を削除 */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
         .logo {
-            font-size: 2rem; /* ロゴを少し大きく */
+            font-size: 2rem;
             font-weight: 700;
             color: #222222;
             text-decoration: none;
-            letter-spacing: -0.02em; /* 文字間隔を調整 */
+            letter-spacing: -0.02em;
         }
         /* ヒーローセクション */
         .hero-section {
-            /* 国会議事堂のフリー画像URLをここに設定してください */
-            /* 例: https://upload.wikimedia.org/wikipedia/commons/1/16/National_Diet_Building_02.jpg */
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/16/National_Diet_Building_02.jpg'); /* 国会議事堂の例 (Wikimedia Commons) */
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/16/National_Diet_Building_02.jpg');
             background-size: cover;
             background-position: center;
-            height: 550px; /* 高さを少し高く */
+            height: 550px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -52,128 +49,149 @@
             position: relative;
             overflow: hidden;
         }
-        .hero-section::before { /* 画像を少し暗くするオーバーレイ */
+        .hero-section::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.5); /* オーバーレイをさらに濃くしてテキストを見やすく */
+            background: rgba(0, 0, 0, 0.6);
         }
         .hero-content {
-            z-index: 1; /* オーバーレイより前面に */
+            z-index: 1;
             padding: 20px;
             max-width: 900px;
         }
         .hero-content h1 {
-            font-size: 4.5rem; /* 大きな見出し */
+            font-size: 4.5rem;
             font-weight: 700;
-            margin-bottom: 25px; /* 間隔を少し広げる */
-            line-height: 1.1; /* 行の高さを詰める */
-            letter-spacing: -0.06em; /* 文字間隔をさらに詰める */
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.5); /* 影を強調 */
+            margin-bottom: 25px;
+            line-height: 1.1;
+            letter-spacing: -0.06em;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
         }
         .hero-content p {
-            font-size: 1.6rem; /* サブテキストを少し大きく */
-            color: #ffffff;
+            font-size: 1.6rem;
+            color: #f0f0f0;
             max-width: 700px;
             margin: 0 auto;
             text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
-            font-weight: 400; /* フォントウェイトを調整 */
+            font-weight: 400;
         }
 
         /* コンテンツセクション */
         .content-section {
-            padding: 100px 50px; /* パディングを増やす */
+            padding: 100px 50px;
             text-align: center;
-            background-color: #fcfcfc; /* わずかに異なる背景色 */
+            background-color: #f0f2f5;
         }
         .content-section h2 {
-            font-size: 3rem; /* 見出しを大きく */
+            font-size: 3rem;
             font-weight: 700;
             color: #222222;
-            margin-bottom: 80px; /* 間隔を広げる */
-            letter-spacing: -0.03em; /* 文字間隔を調整 */
+            margin-bottom: 80px;
+            letter-spacing: -0.03em;
         }
         .content-blocks {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap; /* レスポンシブ対応 */
-            gap: 50px; /* ブロック間の間隔を広げる */
+            flex-wrap: wrap;
+            gap: 50px;
             max-width: 1200px;
             margin: 0 auto;
         }
         .content-block {
-            flex: 1; /* 均等幅 */
-            min-width: 280px; /* 最小幅 */
-            max-width: 350px; /* 最大幅 */
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
             background-color: #ffffff;
-            padding: 50px 30px; /* パディングを増やす */
-            border-radius: 16px; /* 角をさらに丸く */
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1); /* より明確な影 */
+            padding: 50px 30px;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
-            border: 1px solid #e5e5e5; /* 薄いボーダーを調整 */
+            border: 1px solid #e5e5e5;
         }
         .content-block:hover {
-            transform: translateY(-15px); /* ホバー時の浮き上がりを強調 */
-            box-shadow: 0 25px 50px rgba(0,0,0,0.2); /* ホバー時の影を強調 */
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
         }
         .content-block .material-icons {
-            font-size: 4rem; /* アイコンサイズをさらに大きく */
-            color: #555555; /* アイコンの色を少し濃く */
-            margin-bottom: 30px; /* 間隔を広げる */
-            display: block; /* アイコンを中央に配置するためにブロック要素にする */
+            font-size: 4rem;
+            color: #555555;
+            margin-bottom: 30px;
+            display: block;
             text-align: center;
         }
         .content-block h3 {
-            font-size: 2rem; /* 見出しを大きく */
+            font-size: 2rem;
             color: #333333;
             margin-bottom: 20px;
             font-weight: 700;
             letter-spacing: -0.02em;
         }
         .content-block p {
-            font-size: 1.15rem; /* テキストを少し大きく */
+            font-size: 1.15rem;
             color: #666666;
             line-height: 1.7;
             margin: 0;
-            margin-bottom: 30px; /* リンクとの間隔 */
+            margin-bottom: 30px;
         }
-        .content-block a { /* リンクスタイル */
-            display: inline-block;
-            margin-top: 10px; /* 上のテキストとの間隔を調整 */
-            padding: 12px 28px; /* パディングを調整 */
-            background-color: #222222; /* より濃いボタン色 */
+
+        /* 2025参議院選のスタイル (青ベース) */
+        .content-block.blue-base .material-icons,
+        .content-block.blue-base h3 {
+            color: #1155cc;
+        }
+        .content-block.blue-base a {
+            background-color: #1155cc;
             color: white;
-            border-radius: 10px; /* 角をさらに丸く */
+        }
+        .content-block.blue-base a:hover {
+            background-color: #0d4099;
+        }
+
+        /* 2009衆議院選のスタイル (赤ベース) */
+        .content-block.red-base .material-icons,
+        .content-block.red-base h3 {
+            color: #990000;
+        }
+        .content-block.red-base a {
+            background-color: #990000;
+            color: white;
+        }
+        .content-block.red-base a:hover {
+            background-color: #b30000;
+        }
+
+        /* ボタンの共通スタイル */
+        .content-block a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 12px 28px;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.1rem; /* ボタンの文字サイズを調整 */
+            font-size: 1.1rem;
             transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* ボタンの影 */
-        }
-        .content-block a:hover {
-            background-color: #444444; /* ホバー時のボタン色 */
-            transform: translateY(-3px); /* 軽く浮き上がる */
-            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
         }
 
         /* フッター */
         footer {
-            padding: 50px 20px; /* パディングを増やす */
+            padding: 50px 20px;
             text-align: center;
             color: #777777;
             font-size: 0.95rem;
-            background-color: #f8f8f8; /* フッターの背景色 */
-            border-top: none; /* フッターのボーダーを削除 */
-            margin-top: auto; /* フッターを下に固定 */
+            background-color: #e9ecef;
+            border-top: none;
+            margin-top: auto;
         }
         .note {
             color: #888888;
             font-size: 1rem;
-            margin-top: 60px !important; /* 間隔を調整 */
+            margin-top: 60px !important;
         }
         .note .material-icons {
             font-size: 1.1rem;
@@ -211,7 +229,7 @@
                 gap: 30px;
             }
             .content-block {
-                max-width: 100%; /* 小さい画面では全幅に */
+                max-width: 100%;
                 padding: 30px 20px;
             }
             .content-block .material-icons {
@@ -249,18 +267,19 @@
     <div class="content-section">
         <h2>地図一覧</h2>
         <div class="content-blocks">
-            <div class="content-block">
+            <div class="content-block blue-base">
                 <span class="material-icons">leaderboard</span>
                 <h3>2025参議院選比例得票率</h3>
                 <p>第27回参議院議員通常選挙の比例代表について、各自治体で最も得票が多かった政党を視覚的に表示します。地域の政治傾向が一目で分かります。</p>
                 <a href="https://2025san-original.netlify.app/" target="_blank" rel="noopener noreferrer">地図を見る</a>
             </div>
-            <div class="content-block">
+            <div class="content-block red-base">
                 <span class="material-icons">leaderboard</span>
                 <h3>2009衆議院選比例得票率</h3>
                 <p>第45回衆議院議員総選挙の比例代表について、各自治体で最も得票が多かった政党を視覚的に表示します。地域の政治傾向が一目で分かります。</p>
                 <a href="https://2009shu-original.netlify.app/" target="_blank" rel="noopener noreferrer">地図を見る</a>
             </div>
+        </div>
         <p class="note" style="margin-top: 50px;">
             <span class="material-icons">info</span> これらの地図は新しいブラウザタブで開かれ、常に最新の情報に更新されています。
         </p>
