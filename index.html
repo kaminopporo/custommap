@@ -6,6 +6,7 @@
     <title>選挙地図</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=how_to_vote" />
     <style>
         /* 全体的なスタイル */
         body {
@@ -124,6 +125,14 @@
             display: block;
             text-align: center;
         }
+        /* 新しいアイコンのスタイル調整 */
+        .content-block .material-symbols-outlined {
+            font-size: 4rem;
+            color: #555555;
+            margin-bottom: 30px;
+            display: block;
+            text-align: center;
+        }
         .content-block h3 {
             font-size: 2rem;
             color: #333333;
@@ -141,6 +150,7 @@
 
         /* 2025参議院選のスタイル (青ベース) */
         .content-block.blue-base .material-icons,
+        .content-block.blue-base .material-symbols-outlined, /* 追加 */
         .content-block.blue-base h3 {
             color: #1155cc;
         }
@@ -152,8 +162,23 @@
             background-color: #0d4099;
         }
 
+
+        /* 2024エコノミストのスタイル (黒ベース) */
+        .content-block.black-base .material-icons,
+        .content-block.black-base h3 {
+            color: #000000;
+        }
+        .content-block.black-base a {
+            background-color: #000000;
+            color: white;
+        }
+        .content-block.black-base a:hover {
+            background-color: #434343;
+        }
+
         /* 2009衆議院選のスタイル (赤ベース) */
         .content-block.red-base .material-icons,
+        .content-block.red-base .material-symbols-outlined, /* 追加 */
         .content-block.red-base h3 {
             color: #990000;
         }
@@ -236,6 +261,10 @@
                 font-size: 3rem;
                 margin-bottom: 20px;
             }
+            .content-block .material-symbols-outlined { /* 追加 */
+                font-size: 3rem;
+                margin-bottom: 20px;
+            }
             .content-block h3 {
                 font-size: 1.5rem;
             }
@@ -259,24 +288,29 @@
 
     <div class="hero-section">
         <div class="hero-content">
-            <h1>国政選挙の結果</h1>
-            <p>過去の国政選挙の結果を、直感的でインタラクティブな地図で分かりやすく可視化しました。</p>
+            <h1>作成した地図</h1>
+            <p>過去の選挙結果や各国の民主主義指数などについて、直感的でインタラクティブな地図で分かりやすく可視化しました。</p>
         </div>
     </div>
 
     <div class="content-section">
-        <h2>地図一覧</h2>
         <div class="content-blocks">
             <div class="content-block blue-base">
-                <span class="material-icons">leaderboard</span>
+                <span class="material-symbols-outlined">how_to_vote</span>
                 <h3>2025参議院選比例得票率</h3>
-                <p>第27回参議院議員通常選挙の比例代表について、各自治体で最も得票が多かった政党を視覚的に表示します。地域の政治傾向が一目で分かります。</p>
+                <p>第27回参議院議員通常選挙の比例代表について、各自治体で最も得票が多かった政党を視覚的に表示します。</p>
                 <a href="https://2025san-original.netlify.app/" target="_blank" rel="noopener noreferrer">地図を見る</a>
             </div>
-            <div class="content-block red-base">
+            <div class="content-block black-base">
                 <span class="material-icons">leaderboard</span>
+                <h3>2024民主主義指数</h3>
+                <p>エコノミスト・インテリジェンス・ユニット（EIU）研究所が発表する民主主義指数（2024年版）を視覚的に表示します。</p>
+                <a href="https://2024economist-original.netlify.app/" target="_blank" rel="noopener noreferrer">地図を見る</a>
+            </div>
+            <div class="content-block red-base">
+                <span class="material-symbols-outlined">how_to_vote</span>
                 <h3>2009衆議院選比例得票率</h3>
-                <p>第45回衆議院議員総選挙の比例代表について、各自治体で最も得票が多かった政党を視覚的に表示します。地域の政治傾向が一目で分かります。</p>
+                <p>第45回衆議院議員総選挙の比例代表について、各自治体で最も得票が多かった政党を視覚的に表示します。</p>
                 <a href="https://2009shu-original.netlify.app/" target="_blank" rel="noopener noreferrer">地図を見る</a>
             </div>
         </div>
