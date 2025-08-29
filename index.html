@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>選挙地図</title>
+<!-- ライトモード用 -->
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+
+<!-- ダークモード用 -->
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000">
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=how_to_vote" />
@@ -26,14 +32,14 @@
             justify-content: flex-start;
             align-items: center;
             padding: 20px 50px;
-            background-color: #fff2cc;
+            background-color: #fcfae3;
             box-shadow: none; /* 影を削除 */
             border: none; /* 境界線を削除 */
         }
         .logo {
             font-size: 2rem;
             font-weight: 700;
-            color: #222222;
+            color: #000000;
             text-decoration: none;
             letter-spacing: -0.02em;
         }
@@ -50,14 +56,14 @@
             width: 100%;
             padding: 80px 50px;
             text-align: center;
-            background-color: #fff2cc;
+            background-color: #fcfae3;
             border-radius: 40px; /* 角をさらに丸く */
             box-shadow: none; /* 影を削除 */
         }
         .content-section h2 {
             font-size: 3rem;
             font-weight: 700;
-            color: #222222;
+            color: #000000;
             margin-bottom: 80px;
             letter-spacing: -0.03em;
         }
@@ -92,7 +98,7 @@
         .content-block .material-icons,
         .content-block .material-symbols-outlined {
             font-size: 4rem;
-            color: #555555;
+            color: #666666;
             /* マージンをリセット */
             margin-top: 0;
             margin-bottom: 20px; /* 見出しとの間に少し余白を残す */
@@ -101,7 +107,7 @@
         }
         .content-block h3 {
             font-size: 2rem;
-            color: #333333;
+            color: #666666;
             /* マージンを調整 */
             margin-top: 0;
             margin-bottom: 20px;
@@ -197,13 +203,13 @@
             margin-top: auto;
         }
         .note {
-            color: #888888;
+            color: #666666;
             font-size: 1rem;
             margin-top: 60px !important;
         }
         .note .material-icons {
             font-size: 1.1rem;
-            color: #888888;
+            color: #666666;
             vertical-align: middle;
         }
         
@@ -271,7 +277,7 @@
 
 @media (prefers-color-scheme: dark) {
     header {
-        background-color: #7f6000;
+        background-color: #5c5445;
     }
 
     .logo {
@@ -283,7 +289,7 @@
     }
 
     .content-section {
-        background-color: #7f6000;
+        background-color: #5c5445;
     }
 
     .content-section h2 {
