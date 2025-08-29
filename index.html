@@ -72,6 +72,7 @@
             flex: 1;
             min-width: 280px;
             max-width: 350px;
+            min-height: 450px; /* この行を追加して最小高さを設定 */
             background-color: #ffffff;
             padding: 50px 30px;
             border-radius: 40px; /* 角をさらに丸く */
@@ -79,11 +80,11 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
             border: none; /* 境界線を削除 */
+            position: relative;
         }
         .content-block:hover {
             transform: none; /* ホバー時のアニメーションを削除 */
             box-shadow: none; /* ホバー時の影を削除 */
-            background-color: #f3f3f3; /* ホバー時の背景色を追加 */
         }
         .content-block .material-icons {
             font-size: 4rem;
@@ -173,7 +174,6 @@
         /* ボタンの共通スタイル */
         .content-block a {
             display: inline-block;
-            margin-top: 10px;
             padding: 12px 28px;
             border-radius: 40px; /* ボタンの角をさらに丸く */
             text-decoration: none;
@@ -181,6 +181,11 @@
             font-size: 1.1rem;
             transition: background-color 0.3s ease;
             box-shadow: none; /* ボタンの影を削除 */
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 0;
         }
         
         /* フッター */
