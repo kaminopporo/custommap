@@ -73,41 +73,37 @@
             min-width: 280px;
             max-width: 350px;
             background-color: #ffffff;
+            /* 上下左右のpaddingを均一にする */
             padding: 50px 30px;
-            border-radius: 40px; /* 角をさらに丸く */
-            box-shadow: none; /* 影を削除 */
+            border-radius: 40px;
+            box-shadow: none;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
-            border: none; /* 境界線を削除 */
-            
-            /* ↓↓↓ この部分を修正 ↓↓↓ */
+            border: none;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            /* ↑↑↑ この部分を修正 ↑↑↑ */
         }
         .content-block:hover {
-            transform: none; /* ホバー時のアニメーションを削除 */
-            box-shadow: none; /* ホバー時の影を削除 */
+            transform: none;
+            box-shadow: none;
         }
-        .content-block .material-icons {
-            font-size: 4rem;
-            color: #555555;
-            margin-bottom: 30px;
-            display: block;
-            text-align: center;
-        }
-        /* 新しいアイコンのスタイル調整 */
+        /* アイコンのスタイルを修正 */
+        .content-block .material-icons,
         .content-block .material-symbols-outlined {
             font-size: 4rem;
             color: #555555;
-            margin-bottom: 30px;
+            /* マージンをリセット */
+            margin-top: 0;
+            margin-bottom: 20px; /* 見出しとの間に少し余白を残す */
             display: block;
             text-align: center;
         }
         .content-block h3 {
             font-size: 2rem;
             color: #333333;
+            /* マージンを調整 */
+            margin-top: 0;
             margin-bottom: 20px;
             font-weight: 700;
             letter-spacing: -0.02em;
@@ -116,10 +112,8 @@
             font-size: 1.15rem;
             color: #666666;
             line-height: 1.7;
-            margin: 0;
-            /* ↓↓↓ この行を修正 ↓↓↓ */
+            margin-top: 0;
             margin-bottom: auto;
-            /* ↑↑↑ この行を修正 ↑↑↑ */
         }
         
         /* 青ベース */
@@ -177,17 +171,19 @@
             background-color: #b30000;
         }
         
-        /* ボタンの共通スタイル */
+        /* ボタンの共通スタイルを修正 */
         .content-block a {
             display: inline-block;
-            margin-top: 10px;
+            /* マージンをリセット */
+            margin-top: 20px;
+            margin-bottom: 0;
             padding: 12px 28px;
-            border-radius: 40px; /* ボタンの角をさらに丸く */
+            border-radius: 40px;
             text-decoration: none;
             font-weight: 700;
             font-size: 1.1rem;
             transition: background-color 0.3s ease;
-            box-shadow: none; /* ボタンの影を削除 */
+            box-shadow: none;
         }
         
         /* フッター */
@@ -272,6 +268,114 @@
                 padding: 30px 20px;
             }
         }
+
+@media (prefers-color-scheme: dark) {
+    header {
+        background-color: #7f6000;
+    }
+
+    .logo {
+        color: #cccccc;
+    }
+
+    .content-container {
+        background-color: #000000;
+    }
+
+    .content-section {
+        background-color: #7f6000;
+    }
+
+    .content-section h2 {
+        color: #cccccc;
+    }
+
+    .content-block {
+        background-color: #000000;
+        border: 1px solid #000000;
+    }
+
+    .content-block .material-icons,
+    .content-block .material-symbols-outlined {
+        color: #cccccc;
+    }
+
+    .content-block h3 {
+        color: #cccccc;
+    }
+
+    .content-block p {
+        color: #b7b7b7;
+    }
+
+    .content-block.blue-base .material-icons,
+    .content-block.blue-base .material-symbols-outlined,
+    .content-block.blue-base h3 {
+        color: #8ab4f8;
+    }
+    .content-block.green-base .material-icons,
+    .content-block.green-base .material-symbols-outlined,
+    .content-block.green-base h3 {
+        color: #a7e68f;
+    }
+    .content-block.black-base .material-icons,
+    .content-block.black-base h3 {
+        color: #cccccc;
+    }
+    .content-block.red-base .material-icons,
+    .content-block.red-base .material-symbols-outlined,
+    .content-block.red-base h3 {
+        color: #f28b82;
+    }
+
+    .content-block.blue-base a {
+        background-color: #8ab4f8;
+        color: #000000;
+    }
+    .content-block.blue-base a:hover {
+        background-color: #6d93e1;
+    }
+    
+    .content-block.green-base a {
+        background-color: #a7e68f;
+        color: #000000;
+    }
+    .content-block.green-base a:hover {
+        background-color: #8fd07b;
+    }
+    
+    .content-block.black-base a {
+        background-color: #cccccc;
+        color: #000000;
+    }
+    .content-block.black-base a:hover {
+        background-color: #c0c0c0;
+    }
+    
+    .content-block.red-base a {
+        background-color: #f28b82;
+        color: #000000;
+    }
+    .content-block.red-base a:hover {
+        background-color: #e07062;
+    }
+
+    footer {
+        background-color: #1a1a1a;
+        color: #999999;
+    }
+
+    .note {
+        color: #b7b7b7;
+    }
+
+    .note .material-icons {
+        color: #b7b7b7;
+    }
+}
+
+
+
     </style>
 </head>
 <body>
