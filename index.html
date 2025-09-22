@@ -200,8 +200,19 @@
             color: inherit;
         }
 
-        .accordion-item.active .accordion-header .material-symbols-outlined {
+        /* 直接の子要素である.accordion-headerのみを対象とする */
+        .accordion-item.active>.accordion-header .material-symbols-outlined {
             transform: rotate(90deg);
+        }
+
+        /* 階層が深い場合でも、個別に開閉を制御する */
+        .accordion-item .accordion-item.active .accordion-header .material-symbols-outlined {
+            transform: rotate(90deg);
+        }
+
+        /* 閉じた状態のアイコンのスタイルをリセットする */
+        .accordion-item .accordion-item .accordion-header .material-symbols-outlined {
+            transform: none;
         }
 
         .accordion-content {
