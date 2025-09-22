@@ -393,6 +393,7 @@
             vertical-align: middle;
         }
 
+
         /* レスポンシブデザイン */
         @media (max-width: 768px) {
             header {
@@ -403,22 +404,29 @@
                 font-size: 1.5rem;
             }
 
-            /* コンテンツコンテナのパディングを調整 */
+            /* 「選挙に関する地図」と「その他の地図」セクションの横幅を画面いっぱいに広げる */
             .content-container {
-                padding: 40px 20px;
+                padding-left: 0;
+                padding-right: 0;
             }
 
-            /* コンテンツセクションの幅とパディングを調整 */
             .content-section {
-                padding: 40px 20px;
                 width: 100%;
-                /* 幅を画面いっぱいに */
+                max-width: none;
                 box-sizing: border-box;
-                /* パディングとボーダーを幅に含める */
+                padding: 40px 20px;
+                /* 縦の余白は維持し、横に20pxのパディングを維持 */
+                border-radius: 30px;
+                /* 角の丸みは維持 */
             }
 
             .content-section h2 {
                 font-size: 2rem;
+            }
+
+            /* アコーディオンのスタイルは変更しない */
+            .accordion-item {
+                margin-bottom: 30px;
             }
 
             .accordion-header {
@@ -430,8 +438,12 @@
                 font-size: 1.5rem;
             }
 
+            /* 国政選挙・地方選挙のコンテンツを親の幅いっぱいに広げる */
             .accordion-content {
-                padding: 0 20px;
+                padding: 0;
+                /* 左右の余白をなくす */
+                border-bottom-left-radius: 30px;
+                border-bottom-right-radius: 30px;
             }
 
             .accordion-item.active>.accordion-content {
@@ -439,24 +451,20 @@
                 padding-bottom: 20px;
             }
 
-            /* 地図ブロックのレイアウトを調整 */
+            /* 内側の地図ブロックのレイアウト調整 */
             .content-blocks {
                 flex-direction: column;
                 gap: 20px;
-                justify-content: center;
-                align-items: center;
+                padding: 0 20px;
+                /* 左右の余白を維持 */
             }
 
             .content-block {
                 padding: 25px 20px;
                 width: 100%;
-                /* 横幅を100%にして、親要素に合わせる */
                 min-width: auto;
-                /* 最小幅を自動調整 */
                 max-width: none;
-                /* 最大幅の制約をなくす */
                 box-sizing: border-box;
-                /* パディングとボーダーを幅に含める */
             }
 
             .content-block .material-icons,
@@ -476,6 +484,7 @@
                 padding: 10px 20px;
                 font-size: 1.1rem;
             }
+        }
     </style>
 </head>
 
