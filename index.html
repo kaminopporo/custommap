@@ -55,7 +55,7 @@
         .content-section {
             max-width: 1200px;
             width: 100%;
-            padding: 80px 50px;
+            padding: 80px 50px 30px;
             text-align: center;
             background-color: #fff2cc;
             border-radius: 30px;
@@ -67,6 +67,10 @@
             margin-bottom: 40px;
             letter-spacing: 0.05em;
             text-transform: uppercase;
+        }
+
+        #local-elections {
+            margin-bottom: 0;
         }
 
         .black-heading {
@@ -127,6 +131,11 @@
 
         .accordion-item.de .content-block a.de-btn:hover:before {
             left: 0;
+        }
+
+        /* ドイツの見出しパネルとブロック下辺の空白を調整 */
+        .accordion-item.de {
+            margin-bottom: 0;
         }
 
         /* 国ごとの見出し配色 */
@@ -232,6 +241,11 @@
             padding-bottom: 30px;
         }
 
+        .accordion-content .content-blocks {
+            gap: 20px;
+            /* ここを調整して縦横の余白を同じにする */
+        }
+
         /* 各国のテーマカラーに合わせてコンテンツ背景色を変更 */
         .accordion-item.jp.active>.accordion-content {
             background-color: #ffffff;
@@ -258,7 +272,7 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 20px;
         }
 
         .content-block {
@@ -440,6 +454,7 @@
                 margin-bottom: 30px;
             }
 
+
             .accordion-header {
                 padding: 15px 20px;
             }
@@ -495,6 +510,19 @@
                 padding: 10px 20px;
                 font-size: 1.1rem;
             }
+
+            /* 日本ブロック内の地方選挙ブロックの余白をなくす */
+            .accordion-item.jp .accordion-item:last-child {
+                margin-bottom: 0;
+            }
+
+            /* 日本ブロック全体のパディングを調整して、地方選挙ブロック下辺と境界線を重ねる */
+            .accordion-item.jp.active>.accordion-content {
+                padding-bottom: 0;
+            }
+
+
+
         }
     </style>
 </head>
@@ -552,7 +580,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
+                    <div class="accordion-item" id="local-elections">
                         <div class="accordion-header">
                             <h4>地方選挙</h4>
                             <span class="material-symbols-outlined">chevron_right</span>
