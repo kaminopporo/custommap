@@ -89,6 +89,29 @@
             position: relative;
         }
 
+        /* ドイツ見出しが開いたときのコンテンツ背景色を黒に変更 */
+        .accordion-item.de.active>.accordion-content {
+            background-color: #000000;
+        }
+
+        /* ドイツのコンテンツブロック内のアイコンとタイトルの色を変更 */
+        .accordion-item.de .content-block .de-color {
+            color: #000000;
+        }
+
+        /* ドイツのコンテンツブロックの背景色 */
+        .accordion-item.de .content-block {
+            background-color: #ffffff;
+        }
+
+        /* ドイツのコンテンツブロックの「地図を見る」ボタンの色を変更 */
+        .accordion-item.de .content-block a.de-btn {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+
+
         /* 国ごとの見出し配色 */
         .jp-header {
             background-color: #ffffff;
@@ -340,6 +363,18 @@
             background-color: #666666;
         }
 
+        /* ドイツのボタンのスタイル */
+        .de-btn {
+            background-color: #000000;
+            color: #cc0000;
+        }
+
+        /* ドイツのボタンのホバー時のスタイル */
+        .de-btn:hover {
+            background-color: #666666;
+            color: #ff3344;
+        }
+
         .note {
             color: #666666;
             font-size: 1rem;
@@ -568,22 +603,18 @@
                             <h3 class="de-color">2025ドイツ連邦議会選挙</h3>
                             <p>2025年2月23日に行われたドイツ連邦議会議員選挙について、各選挙区で最も得票が多かった政党を視覚的に表示します。</p>
                             <a href="https://2025de-bundestag.netlify.app/" target="_blank" rel="noopener noreferrer"
-                                class="red-btn">地図を見る</a>
+                                class="de-btn">地図を見る</a>
                         </div>
                         <div class="content-block">
                             <span class="material-symbols-outlined de-color">how_to_vote</span>
                             <h3 class="de-color">2021ドイツ連邦議会選挙</h3>
                             <p>2021年9月26日に行われたドイツ連邦議会議員選挙について、各選挙区で最も得票が多かった政党を視覚的に表示します。</p>
                             <a href="https://2021de-bundestag.netlify.app/" target="_blank" rel="noopener noreferrer"
-                                class="red-btn">地図を見る</a>
+                                class="de-btn">地図を見る</a>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <p class="note">
-                <span class="material-icons">info</span> これらの地図は新しいブラウザタブで開かれます。地図は必要に応じて更新されることがあります。
-            </p>
         </div>
     </div>
 
@@ -612,9 +643,6 @@
                     <a href="https://2022fertility.netlify.app/" target="_blank" rel="noopener noreferrer"
                         class="dark-btn">地図を見る</a>
                 </div>
-                <p class="note">
-                    <span class="material-icons">info</span> これらの地図は新しいブラウザタブで開かれます。地図は必要に応じて更新されることがあります。
-                </p>
             </div>
         </div>
     </div>
