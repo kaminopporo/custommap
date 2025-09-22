@@ -110,6 +110,26 @@
             color: #000000;
         }
 
+        /* 米国見出しの文字とアイコンに白の縁取りを追加 */
+        .us-header h3,
+        .us-header .material-symbols-outlined {
+            text-shadow:
+                -1px -1px 0 #ffffff,
+                1px -1px 0 #ffffff,
+                -1px 1px 0 #ffffff,
+                1px 1px 0 #ffffff;
+        }
+
+        /* 英国見出しの文字とアイコンに白の縁取りを追加 */
+        .uk-header h3,
+        .uk-header .material-symbols-outlined {
+            text-shadow:
+                -1px -1px 0 #ffffff,
+                1px -1px 0 #ffffff,
+                -1px 1px 0 #ffffff,
+                1px 1px 0 #ffffff;
+        }
+
         /* 通常の見出し背景色 */
         .accordion-header:not(.jp-header):not(.us-header):not(.uk-header):not(.de-header) {
             background-color: #cc0000;
@@ -343,12 +363,18 @@
                 font-size: 1.5rem;
             }
 
+            /* コンテンツコンテナのパディングを調整 */
             .content-container {
                 padding: 40px 20px;
             }
 
+            /* コンテンツセクションの幅とパディングを調整 */
             .content-section {
                 padding: 40px 20px;
+                width: 100%;
+                /* 幅を画面いっぱいに */
+                box-sizing: border-box;
+                /* パディングとボーダーを幅に含める */
             }
 
             .content-section h2 {
@@ -373,16 +399,24 @@
                 padding-bottom: 20px;
             }
 
+            /* 地図ブロックのレイアウトを調整 */
             .content-blocks {
                 flex-direction: column;
                 gap: 20px;
                 justify-content: center;
                 align-items: center;
-                /* ← この1行を追加しました */
             }
 
             .content-block {
                 padding: 25px 20px;
+                width: 100%;
+                /* 横幅を100%にして、親要素に合わせる */
+                min-width: auto;
+                /* 最小幅を自動調整 */
+                max-width: none;
+                /* 最大幅の制約をなくす */
+                box-sizing: border-box;
+                /* パディングとボーダーを幅に含める */
             }
 
             .content-block .material-icons,
