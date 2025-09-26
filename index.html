@@ -77,16 +77,21 @@
             color: #000000;
         }
 
+        /* カナダの見出しパネルとブロック下辺の空白を調整 */
+        .accordion-item.ca {
+            margin-bottom: 0;
+        }
+
         /* アコーディオンコンテナ */
         .accordion-item {
-            margin-bottom: 30px;
+            margin-bottom: 15px;
         }
 
         .accordion-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 20px 30px;
+            padding: 10px 30px;
             border-radius: 30px;
             cursor: pointer;
             transition: background-color 0.3s ease, border-radius 0.3s ease, color 0.3s ease;
@@ -133,10 +138,7 @@
             left: 0;
         }
 
-        /* ドイツの見出しパネルとブロック下辺の空白を調整 */
-        .accordion-item.de {
-            margin-bottom: 0;
-        }
+
 
         /* 国ごとの見出し配色 */
         .jp-header {
@@ -263,6 +265,10 @@
             background-color: #ffcc00;
         }
 
+        .accordion-item.ca.active>.accordion-content {
+            background-color: #cc0000;
+        }
+
         /* その他の見出しが開いたときのコンテンツ背景色 */
         .accordion-item:not(.jp):not(.us):not(.uk):not(.de).active>.accordion-content {
             background-color: #cc0000;
@@ -333,6 +339,10 @@
         }
 
         .de-color {
+            color: #cc0000;
+        }
+
+        .ca-color {
             color: #cc0000;
         }
 
@@ -677,6 +687,25 @@
                     </div>
                 </div>
             </div>
+
+            <div class="accordion-item ca">
+                <div class="accordion-header ca-header">
+                    <h3>カナダ</h3>
+                    <span class="material-symbols-outlined">chevron_right</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="content-blocks">
+                        <div class="content-block">
+                            <span class="material-symbols-outlined ca-color">how_to_vote</span>
+                            <h3 class="ca-color">2025カナダ総選挙</h3>
+                            <p>2025年4月28日に行われたカナダ庶民院議員選挙について、全国の選挙区ごとの当選政党及び政党ごとの得票率を視覚的に表示します。</p>
+                            <a href="https://2025ca-commons.netlify.app/" target="_blank" rel="noopener noreferrer"
+                                class="red-btn">地図を見る</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -730,12 +759,7 @@
                     // クリックしたアコーディオンを開閉する
                     item.classList.toggle('active');
 
-                    // 開いたときにアニメーションが完了するのを待ってからスクロール
-                    if (item.classList.contains('active')) {
-                        setTimeout(() => {
-                            header.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }, transitionDuration);
-                    }
+
                 });
             });
         });
