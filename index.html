@@ -32,7 +32,7 @@
             justify-content: flex-start;
             align-items: center;
             padding: 20px 50px;
-            background-color: #fff2cc;
+            background-color: #e0e0e0;
             border-bottom: none;
         }
 
@@ -41,7 +41,7 @@
             font-weight: 700;
             color: #000000;
             text-decoration: none;
-            letter-spacing: -0.02em;
+            letter-spacing: 0.00em;
         }
 
         /* コンテンツセクション */
@@ -57,7 +57,7 @@
             width: 100%;
             padding: 80px 50px 30px;
             text-align: center;
-            background-color: #fff2cc;
+            background-color: #e0e0e0;
             border-radius: 30px;
         }
 
@@ -102,18 +102,18 @@
 
         /* ドイツのコンテンツブロックの背景色 */
         .accordion-item.de .content-block {
-            background-color: #cc0000;
+            background-color: #ffffff;
         }
 
         /* ドイツのコンテンツブロックの「地図を見る」ボタンの色を変更 */
         .accordion-item.de .content-block a.de-btn {
             background-color: #ffcc00;
-            color: #cc0000;
+            color: #ffffff;
         }
 
         /* ドイツのコンテンツブロックの文章の色を変更 */
         .accordion-item.de .content-block p {
-            color: #eeeeee;
+            color: #666666;
         }
 
         /* ドイツのコンテンツブロックの「地図を見る」ボタンのホバー時の色変化 */
@@ -423,6 +423,9 @@
         @media (max-width: 768px) {
             header {
                 padding: 15px 20px;
+                /* スマホ版で下左端と右下端のみを30pxの角丸にする */
+                border-radius: 0 0 30px 30px;
+                /* 上左, 上右, 下右, 下左 の順 */
             }
 
             .logo {
