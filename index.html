@@ -209,21 +209,22 @@
             font-size: 2.5rem;
             transition: transform 0.3s ease;
             color: inherit;
+            transform: rotate(90deg);
         }
 
         /* 直接の子要素である.accordion-headerのみを対象とする */
         .accordion-item.active>.accordion-header .material-symbols-outlined {
-            transform: rotate(90deg);
+            transform: none;
         }
 
         /* 階層が深い場合でも、個別に開閉を制御する */
         .accordion-item .accordion-item.active .accordion-header .material-symbols-outlined {
-            transform: rotate(90deg);
+            transform: none;
         }
 
         /* 閉じた状態のアイコンのスタイルをリセットする */
         .accordion-item .accordion-item .accordion-header .material-symbols-outlined {
-            transform: none;
+            transform: rotate(90deg);
         }
 
         .accordion-content {
