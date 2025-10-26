@@ -166,6 +166,11 @@
             color: #ffffff;
         }
 
+        .tw-header {
+            background-color: #000094;
+            color: #ffffff;
+        }
+
         /* 米国見出しの文字とアイコンに白の縁取りを追加 */
         .us-header h3,
         .us-header .material-symbols-outlined {
@@ -187,7 +192,7 @@
         }
 
         /* 通常の見出し背景色 */
-        .accordion-header:not(.jp-header):not(.us-header):not(.uk-header):not(.de-header):not(.nl-header) {
+        .accordion-header:not(.jp-header):not(.us-header):not(.uk-header):not(.de-header):not(.nl-header):not(.tw-header) {
             background-color: #cc0000;
             color: #ffffff;
         }
@@ -279,8 +284,12 @@
             background-color: #ff9900;
         }
 
+        .accordion-item.tw.active>.accordion-content {
+            background-color: #000094;
+        }
+
         /* その他の見出しが開いたときのコンテンツ背景色 */
-        .accordion-item:not(.jp):not(.us):not(.uk):not(.de):not(.nl).active>.accordion-content {
+        .accordion-item:not(.jp):not(.us):not(.uk):not(.de):not(.nl):not(.tw).active>.accordion-content {
             background-color: #cc0000;
         }
 
@@ -360,6 +369,10 @@
             color: #ff9900;
         }
 
+        .tw-color {
+            color: #000094;
+        }
+
         .content-block p {
             font-size: 1.15rem;
             color: #666666;
@@ -435,6 +448,14 @@
 
         .orange-btn:hover {
             background-color: #b45f06;
+        }
+
+        .tw-btn {
+            background-color: #000094;
+        }
+
+        .tw-btn:hover {
+            background-color: #3c78d8;
         }
 
 
@@ -652,6 +673,24 @@
                                         rel="noopener noreferrer" class="red-btn">地図を見る</a>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item tw">
+                <div class="accordion-header tw-header">
+                    <h3>中華民国</h3>
+                    <span class="material-symbols-outlined">chevron_right</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="content-blocks">
+                        <div class="content-block">
+                            <span class="material-symbols-outlined tw-color">how_to_vote</span>
+                            <h3 class="tw-color">2024中華民国総統選挙</h3>
+                            <p>2024年1月13日に行われた第16期中華民国総統選挙について、全国の自治体ごとの各政党の得票率を視覚的に表示します。</p>
+                            <a href="https://2024tw-president.netlify.app/" target="_blank" rel="noopener noreferrer"
+                                class="tw-btn">地図を見る</a>
                         </div>
                     </div>
                 </div>
